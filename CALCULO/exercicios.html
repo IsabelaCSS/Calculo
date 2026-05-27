@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercícios – CDI</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .ex-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .ex-block .ex-num {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .ex-block .ex-question {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .toggle-btn {
+      background: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .toggle-btn:hover { background: var(--gold); color: var(--bg); }
+    .ex-answer {
+      display: none;
+      margin-top: 1rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .ex-answer.open { display: block; }
+    .ex-answer .step {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-bottom: 0.4rem;
+    }
+    .ex-answer .result {
+      background: var(--bg);
+      border-left: 3px solid var(--gold);
+      padding: 0.7rem 1.2rem;
+      margin-top: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light);
+      font-size: 1rem;
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">∫ CDI</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="derivadas.html">Derivadas</a></li>
+      <li><a href="integrais.html">Integrais</a></li>
+      <li><a href="matematicos.html">Matemáticos</a></li>
+      <li><a href="videos.html">Vídeos</a></li>
+      <li><a href="ferramentas.html">Ferramentas</a></li>
+      <li><a href="exercicios.html">Exercícios</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Exercícios</h1>
+    <p>Questões de derivadas e integrais com resolução passo a passo. Clique em "Ver resolução" para conferir.</p>
+  </div>
+
+  <div class="content" style="max-width: 860px;">
+
+    <!-- DERIVADAS -->
+    <h2>Derivadas</h2>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 1</div>
+      <div class="ex-question">Calcule f'(x) para f(x) = 4x³ − 3x² + 7x − 2</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Aplica-se a regra da potência termo a termo:</p>
+        <p class="step">— Derivada de 4x³ = 3 · 4x² = 12x²</p>
+        <p class="step">— Derivada de −3x² = 2 · (−3)x = −6x</p>
+        <p class="step">— Derivada de 7x = 7</p>
+        <p class="step">— Derivada de −2 (constante) = 0</p>
+        <div class="result">f'(x) = 12x² − 6x + 7</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 2</div>
+      <div class="ex-question">Calcule a derivada de g(x) = eˣ · sen(x)</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Usa-se a regra do produto: (uv)' = u'v + uv'</p>
+        <p class="step">— u = eˣ → u' = eˣ</p>
+        <p class="step">— v = sen(x) → v' = cos(x)</p>
+        <div class="result">g'(x) = eˣ · sen(x) + eˣ · cos(x) = eˣ(sen x + cos x)</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 3</div>
+      <div class="ex-question">Calcule h'(x) para h(x) = ln(x² + 1)</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Trata-se de uma função composta. Usa-se (ln u)' = u'/u</p>
+        <p class="step">— u = x² + 1 → u' = 2x</p>
+        <div class="result">h'(x) = 2x / (x² + 1)</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 4</div>
+      <div class="ex-question">Calcule a derivada de p(x) = cos(3x²)</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Usa-se a regra da cadeia: (cos u)' = −sen(u) · u'</p>
+        <p class="step">— u = 3x² → u' = 6x</p>
+        <div class="result">p'(x) = −sen(3x²) · 6x = −6x · sen(3x²)</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 5</div>
+      <div class="ex-question">Calcule a derivada de q(x) = (2x + 1)⁵</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Usa-se a regra da potência composta: (uⁿ)' = n·uⁿ⁻¹·u'</p>
+        <p class="step">— u = 2x + 1 → u' = 2</p>
+        <p class="step">— n = 5</p>
+        <div class="result">q'(x) = 5(2x + 1)⁴ · 2 = 10(2x + 1)⁴</div>
+      </div>
+    </div>
+
+    <!-- INTEGRAIS -->
+    <h2>Integrais</h2>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 6</div>
+      <div class="ex-question">Calcule ∫ (3x² + 2x − 5) dx</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Integra-se cada termo usando ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</p>
+        <p class="step">— ∫ 3x² dx = x³</p>
+        <p class="step">— ∫ 2x dx = x²</p>
+        <p class="step">— ∫ −5 dx = −5x</p>
+        <div class="result">∫ (3x² + 2x − 5) dx = x³ + x² − 5x + C</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 7</div>
+      <div class="ex-question">Calcule ∫₀² (x² + 1) dx</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Passo 1 — encontrar a primitiva: F(x) = x³/3 + x</p>
+        <p class="step">Passo 2 — aplicar o Teorema Fundamental: F(2) − F(0)</p>
+        <p class="step">— F(2) = 8/3 + 2 = 14/3</p>
+        <p class="step">— F(0) = 0</p>
+        <div class="result">∫₀² (x² + 1) dx = 14/3 ≈ 4,67</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 8</div>
+      <div class="ex-question">Calcule ∫ x · cos(x) dx</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Usa-se integração por partes: ∫ u dv = uv − ∫ v du</p>
+        <p class="step">— u = x → du = dx</p>
+        <p class="step">— dv = cos(x) dx → v = sen(x)</p>
+        <p class="step">Substituindo: x·sen(x) − ∫ sen(x) dx</p>
+        <p class="step">— ∫ sen(x) dx = −cos(x)</p>
+        <div class="result">∫ x · cos(x) dx = x·sen(x) + cos(x) + C</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 9</div>
+      <div class="ex-question">Calcule ∫ ln(x) dx</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Usa-se integração por partes. Embora pareça ter só um fator, reescrevemos como ln(x) · 1:</p>
+        <p class="step">— u = ln(x) → du = 1/x dx</p>
+        <p class="step">— dv = dx → v = x</p>
+        <p class="step">Aplicando: x·ln(x) − ∫ x · (1/x) dx = x·ln(x) − ∫ 1 dx</p>
+        <div class="result">∫ ln(x) dx = x·ln(x) − x + C</div>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <div class="ex-num">Exercício 10</div>
+      <div class="ex-question">Calcule ∫ x · eˣ dx</div>
+      <button class="toggle-btn" onclick="toggle(this)">Ver resolução ↓</button>
+      <div class="ex-answer">
+        <p class="step">Usa-se integração por partes:</p>
+        <p class="step">— u = x → du = dx</p>
+        <p class="step">— dv = eˣ dx → v = eˣ</p>
+        <p class="step">Aplicando: x·eˣ − ∫ eˣ dx = x·eˣ − eˣ</p>
+        <div class="result">∫ x · eˣ dx = eˣ(x − 1) + C</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Isabela de Oliveira Alves · Fatec Carapicuíba · <a href="mailto:isabela.alves3@aluno.cps.sp.gov.br">isabela.alves3@aluno.cps.sp.gov.br</a></p>
+  </footer>
+
+  <script>
+    function toggle(btn) {
+      const answer = btn.nextElementSibling;
+      const open = answer.classList.toggle('open');
+      btn.textContent = open ? 'Ocultar resolução ↑' : 'Ver resolução ↓';
+    }
+  </script>
+
+</body>
+</html>

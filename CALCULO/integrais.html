@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Integrais – CDI</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">∫ CDI</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="derivadas.html">Derivadas</a></li>
+      <li><a href="integrais.html">Integrais</a></li>
+      <li><a href="matematicos.html">Matemáticos</a></li>
+      <li><a href="videos.html">Vídeos</a></li>
+      <li><a href="ferramentas.html">Ferramentas</a></li>
+      <li><a href="exercicios.html">Exercícios</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Integrais</h1>
+    <p>Integração indefinida, definida, por partes e aplicações geométricas.</p>
+  </div>
+
+  <div class="content">
+
+    <h2>O que é integração?</h2>
+    <p>Integrar é o processo inverso de derivar. Dado que F'(x) = f(x), chamamos F(x) de primitiva ou antiderivada de f(x). A integral indefinida representa toda a família de primitivas de uma função, diferenciadas por uma constante C.</p>
+    <p>Já a integral definida tem interpretação geométrica direta: representa a área com sinal entre o gráfico de f(x) e o eixo x no intervalo [a, b].</p>
+
+    <h2>Integral definida — Teorema Fundamental do Cálculo</h2>
+    <div class="formula-block">∫ₐᵇ f(x) dx = F(b) − F(a)</div>
+    <p>Esse resultado — chamado Teorema Fundamental do Cálculo — conecta derivação e integração, mostrando que são operações inversas.</p>
+
+    <h2>Tabela de integrais básicas</h2>
+    <div class="formula-grid">
+      <div class="formula-item">
+        <div class="label">Potência (n ≠ −1)</div>
+        <div class="formula">∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">1/x</div>
+        <div class="formula">∫ (1/x) dx = ln|x| + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Exponencial</div>
+        <div class="formula">∫ eˣ dx = eˣ + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Seno</div>
+        <div class="formula">∫ sen(x) dx = −cos(x) + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Cosseno</div>
+        <div class="formula">∫ cos(x) dx = sen(x) + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Tangente</div>
+        <div class="formula">∫ tg(x) dx = ln|sec(x)| + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">sec²(x)</div>
+        <div class="formula">∫ sec²(x) dx = tg(x) + C</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Arctangente</div>
+        <div class="formula">∫ 1/(1+x²) dx = arctg(x) + C</div>
+      </div>
+    </div>
+
+    <h2>Integração por partes</h2>
+    <p>Técnica usada quando o integrando é produto de duas funções. A fórmula é derivada da regra do produto da derivação:</p>
+    <div class="formula-block">∫ u dv = uv − ∫ v du</div>
+    <p>Para escolher bem u e dv, use a ordem de prioridade <strong style="color:var(--gold-light)">LIATE</strong>: Logarítmica → Inversa trigonométrica → Algébrica → Trigonométrica → Exponencial. Escolha u como o primeiro tipo presente nessa lista.</p>
+
+    <h2>Exemplo — integração por partes</h2>
+    <p>Calcule ∫ x · eˣ dx:</p>
+    <p style="color: var(--muted);">u = x → du = dx &nbsp;|&nbsp; dv = eˣ dx → v = eˣ</p>
+    <div class="formula-block">∫ x eˣ dx = x·eˣ − ∫ eˣ dx = x·eˣ − eˣ + C = eˣ(x − 1) + C</div>
+
+    <h2>Área entre duas curvas</h2>
+    <p>Quando f(x) ≥ g(x) em todo o intervalo [a, b], a área compreendida entre as duas curvas é calculada por:</p>
+    <div class="formula-block">A = ∫ₐᵇ [f(x) − g(x)] dx</div>
+
+    <h2>Volume de sólido de revolução</h2>
+    <p>Ao girar a região sob f(x) em torno do eixo x, o volume do sólido gerado é:</p>
+    <div class="formula-block">V = π · ∫ₐᵇ [f(x)]² dx</div>
+
+  </div>
+
+  <footer>
+    <p>Isabela de Oliveira Alves · Fatec Carapicuíba · <a href="mailto:isabela.alves3@aluno.cps.sp.gov.br">isabela.alves3@aluno.cps.sp.gov.br</a></p>
+  </footer>
+
+</body>
+</html>
