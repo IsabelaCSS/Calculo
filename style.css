@@ -150,8 +150,11 @@ body {
 
 .content {
   padding: 3rem 2.5rem;
-  max-width: 860px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
+
 .content h2 {
   font-family: 'Playfair Display', serif;
   color: var(--gold);
@@ -250,7 +253,9 @@ footer a { color: var(--gold); }
 .info-section {
   padding: 3rem 2.5rem;
   border-bottom: 1px solid var(--border);
-  max-width: 860px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 .info-section.alt {
   background: var(--bg2);
@@ -319,4 +324,13 @@ footer a { color: var(--gold); }
   .navbar { padding: 1rem 1.2rem; }
   .nav-links { gap: 1rem; }
   .cards-section, .content, .page-header { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
+.cards-section,
+.page-header,
+.hero,
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
