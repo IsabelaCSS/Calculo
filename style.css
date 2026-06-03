@@ -334,3 +334,107 @@ footer {
   margin: 0 auto;
   width: 100%;
 }
+
+
+/* HAMBURGER BUTTON */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--gold);
+  border-radius: 2px;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    padding: 3rem 1.2rem 2.5rem;
+    text-align: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-sub {
+    margin: 0 auto 2rem;
+  }
+
+  /* SECTIONS */
+  .cards-section,
+  .content,
+  .page-header,
+  .info-section {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 1.5rem 1.2rem;
+    font-size: 0.8rem;
+    line-height: 1.9;
+  }
+
+  footer p {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 420px) {
+  .formula-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+}
