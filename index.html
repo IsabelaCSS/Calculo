@@ -9,19 +9,23 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="nav-logo">∫ CDI</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="derivadas.html">Derivadas</a></li>
-      <li><a href="integrais.html">Integrais</a></li>
-      <li><a href="matematicos.html">Matemáticos</a></li>
-      <li><a href="videos.html">Vídeos</a></li>
-      <li><a href="ferramentas.html">Ferramentas</a></li>
-      <li><a href="exercicios.html">Exercícios</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <div class="nav-logo">∫ CDI</div>
+  <button class="nav-toggle" aria-label="Menu" onclick="
+    this.nextElementSibling.classList.toggle('open');
+    this.textContent = this.nextElementSibling.classList.contains('open') ? '✕' : '☰';
+  ">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="derivadas.html">Derivadas</a></li>
+    <li><a href="integrais.html">Integrais</a></li>
+    <li><a href="matematicos.html">Matemáticos</a></li>
+    <li><a href="videos.html">Vídeos</a></li>
+    <li><a href="ferramentas.html">Ferramentas</a></li>
+    <li><a href="exercicios.html">Exercícios</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+  </ul>
+</nav>
 
   <header class="hero">
     <div class="hero-content">
