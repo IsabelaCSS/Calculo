@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Derivadas – CDI</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">∫ CDI</div>
+  <button class="nav-toggle" aria-label="Menu" onclick="
+    this.nextElementSibling.classList.toggle('open');
+    this.textContent = this.nextElementSibling.classList.contains('open') ? '✕' : '☰';
+  ">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="derivadas.html">Derivadas</a></li>
+    <li><a href="integrais.html">Integrais</a></li>
+    <li><a href="matematicos.html">Matemáticos</a></li>
+    <li><a href="videos.html">Vídeos</a></li>
+    <li><a href="ferramentas.html">Ferramentas</a></li>
+    <li><a href="exercicios.html">Exercícios</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+  </ul>
+</nav>
+
+  <div class="page-header">
+    <h1>Derivadas</h1>
+    <p>Conceito, regras de derivação, função composta e exemplos resolvidos.</p>
+  </div>
+
+  <div class="content">
+
+    <h2>Conceito de derivada</h2>
+    <p>A derivada mede como uma função varia em resposta a pequenas mudanças em sua variável. Formalmente, a derivada de f(x) num ponto x₀ é o limite da razão entre a variação da função e a variação da variável, quando essa variação tende a zero.</p>
+    <div class="formula-block">f'(x₀) = lim [f(x₀+h) − f(x₀)] / h, quando h → 0</div>
+    <p>Geometricamente, f'(x₀) representa o coeficiente angular da reta tangente ao gráfico de f no ponto (x₀, f(x₀)).</p>
+
+    <h2>Equação da reta tangente</h2>
+    <div class="formula-block">y − f(x₀) = f'(x₀) · (x − x₀)</div>
+
+    <h2>Regras básicas de derivação</h2>
+    <div class="formula-grid">
+      <div class="formula-item">
+        <div class="label">Constante</div>
+        <div class="formula">(c)' = 0</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Potência</div>
+        <div class="formula">(xⁿ)' = nxⁿ⁻¹</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Soma / Subtração</div>
+        <div class="formula">(u ± v)' = u' ± v'</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Produto</div>
+        <div class="formula">(uv)' = u'v + uv'</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Quociente</div>
+        <div class="formula">(u/v)' = (u'v − uv') / v²</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Exponencial natural</div>
+        <div class="formula">(eˣ)' = eˣ</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Logaritmo natural</div>
+        <div class="formula">(ln x)' = 1/x</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Seno</div>
+        <div class="formula">(sen x)' = cos x</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Cosseno</div>
+        <div class="formula">(cos x)' = −sen x</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Tangente</div>
+        <div class="formula">(tg x)' = sec²x</div>
+      </div>
+    </div>
+
+    <h2>Regra da cadeia</h2>
+    <p>Quando uma função é composta — ou seja, uma função aplicada dentro de outra — usa-se a regra da cadeia:</p>
+    <div class="formula-block">Se y = f(g(x)), então dy/dx = f'(g(x)) · g'(x)</div>
+    <p>Exemplo: y = sen(x²) → y' = cos(x²) · 2x</p>
+
+    <h2>Derivadas de funções compostas</h2>
+    <div class="formula-grid">
+      <div class="formula-item">
+        <div class="label">Potência composta</div>
+        <div class="formula">(uⁿ)' = nuⁿ⁻¹ · u'</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Exponencial composta</div>
+        <div class="formula">(eᵘ)' = eᵘ · u'</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Logaritmo composto</div>
+        <div class="formula">(ln u)' = u'/u</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Seno composto</div>
+        <div class="formula">(sen u)' = cos(u) · u'</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Cosseno composto</div>
+        <div class="formula">(cos u)' = −sen(u) · u'</div>
+      </div>
+      <div class="formula-item">
+        <div class="label">Arcotangente</div>
+        <div class="formula">(arctg u)' = u'/(1+u²)</div>
+      </div>
+    </div>
+
+    <h2>Exemplo resolvido</h2>
+    <p>Calcule f'(x) para f(x) = x³ − 5x² + 2x − 7:</p>
+    <p style="color: var(--muted);">Aplica-se a regra da potência em cada termo separadamente:</p>
+    <div class="formula-block">f'(x) = 3x² − 10x + 2</div>
+
+    <h2>Interpretação prática</h2>
+    <p>Se f(t) representa a posição de um objeto no instante t, então f'(t) é sua velocidade instantânea. Se f(t) é a velocidade, então f''(t) é a aceleração. Essa ligação entre derivada e movimento foi justamente o ponto de partida de Newton ao desenvolver o cálculo.</p>
+
+  </div>
+
+
+  <footer>
+    <p>· Fatec Carapicuíba · </p>
+    <p>Carlos Eduardo Macedo Oliveira - <a href="mailto:carlos.oliveira16@aluno.cps.sp.gov.br">carlos.oliveira16@aluno.cps.sp.gov.br</a></p>
+    <p>Felipe Hajime Yamashita - <a href="mailto:felipe.yamashita01@aluno.cps.sp.gov.br">felipe.yamashita01@aluno.cps.sp.gov.br</a></p>
+    <p>Isabela de Oliveira Alves - <a href="mailto:isabela.alves3@aluno.cps.sp.gov.br">isabela.alves3@aluno.cps.sp.gov.br</a></p>
+  </footer>
+
+</body>
+</html>
